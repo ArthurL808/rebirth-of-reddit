@@ -1,0 +1,125 @@
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.img {
+  height: 150px;
+  width: 250px;
+  padding-bottom: 5px;
+}
+
+.spanHolder {
+  font-family: "Lato";
+  padding-top: 5px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.bySpan {
+  color: #818285;
+}
+
+.dateSpan {
+  color: #818285;
+}
+
+.viewsSpan {
+  color: #818285;
+}
+
+.authorSpan {
+  color: #818285;
+}
+
+.postText {
+  font-family: "Lato";
+  height: 60px;
+  overflow: hidden;
+}
+
+.postTitle {
+  font-family: "Oswald";
+  height: 48px;
+  overflow: hidden;
+}
+
+.post {
+  background-color: white;
+  height: 300px;
+  width: 250px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0px 0px 10px #291000;
+  overflow: hidden;
+}
+
+#menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #3a3a3d;
+  color: #818285;
+}
+#menu button {
+  font-family: "Oswald", sans-serif;
+  color: #818285;
+  background: none;
+  font-size: 15pt;
+  border: none;
+}
+#menu button:hover {
+  color: orange;
+}
+
+#plus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  height: 28px;
+  width: 25px;
+  font-size: 40px;
+  border: solid #f48153 2px;
+  color: #b74326;
+}
+#plus:hover {
+  color: white;
+  background-color: #f1582b;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  background-image: url(../assets/logo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 75px;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  background-image: url(../assets/bg.jpg);
+}
+
+#footer {
+  display: flex;
+  justify-content: center;
+  background-color: #3a3a3d;
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+  height: 50px;
+}
+#footer img {
+  padding-left: 10px;
+}
