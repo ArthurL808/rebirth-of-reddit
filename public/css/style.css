@@ -1,52 +1,52 @@
 #container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-}
+  justify-content: space-evenly; }
+
+#load {
+  background: none;
+  border: none;
+  font-family: 'Oswald';
+  font-size: 15pt;
+  color: #818285;
+  padding-left: 10px; }
+  #load:hover {
+    color: orange; }
 
 .img {
   height: 150px;
   width: 250px;
-  padding-bottom: 5px;
-}
+  padding-bottom: 5px; }
 
 .spanHolder {
   font-family: "Lato";
-  padding-top: 5px;
-}
+  padding-top: 5px; }
 
 .link {
   text-decoration: none;
-  color: black;
-}
+  color: black; }
 
 .bySpan {
-  color: #818285;
-}
+  color: #818285; }
 
 .dateSpan {
-  color: #818285;
-}
+  color: #818285; }
 
 .viewsSpan {
-  color: #818285;
-}
+  color: #818285; }
 
 .authorSpan {
-  color: #818285;
-}
+  color: #818285; }
 
 .postText {
   font-family: "Lato";
   height: 60px;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 .postTitle {
   font-family: "Oswald";
   height: 48px;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 .post {
   background-color: white;
@@ -55,8 +55,7 @@
   padding: 20px;
   margin: 20px;
   box-shadow: 0px 0px 10px #291000;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 #menu {
   display: flex;
@@ -64,18 +63,20 @@
   justify-content: center;
   align-items: center;
   background-color: #3a3a3d;
-  color: #818285;
-}
-#menu button {
-  font-family: "Oswald", sans-serif;
-  color: #818285;
-  background: none;
-  font-size: 15pt;
-  border: none;
-}
-#menu button:hover {
-  color: orange;
-}
+  color: #818285; }
+  #menu button {
+    font-family: "Oswald", sans-serif;
+    color: #818285;
+    background: none;
+    font-size: 15pt;
+    border: none; }
+    #menu button:hover {
+      color: orange; }
+
+.search {
+  margin-top: 30px;
+  position: relative;
+  left: 200px; }
 
 #plus {
   display: flex;
@@ -88,12 +89,10 @@
   width: 25px;
   font-size: 40px;
   border: solid #f48153 2px;
-  color: #b74326;
-}
-#plus:hover {
-  color: white;
-  background-color: #f1582b;
-}
+  color: #b74326; }
+  #plus:hover {
+    color: white;
+    background-color: #f1582b; }
 
 .header {
   display: flex;
@@ -103,13 +102,11 @@
   background-repeat: no-repeat;
   background-position: center;
   height: 75px;
-  position: relative;
-}
+  position: relative; }
 
 body {
   margin: 0;
-  background-image: url(../assets/bg.jpg);
-}
+  background-image: url(../assets/bg.jpg); }
 
 #footer {
   display: flex;
@@ -118,8 +115,6 @@ body {
   position: fixed;
   bottom: 0%;
   width: 100%;
-  height: 50px;
-}
-#footer img {
-  padding-left: 10px;
-}
+  height: 50px; }
+  #footer img {
+    padding-left: 10px; }

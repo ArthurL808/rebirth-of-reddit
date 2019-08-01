@@ -3,6 +3,17 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+#load{
+  background: none;
+  border: none;
+  font-family: 'Oswald';
+  font-size: 15pt;
+  color: #818285;
+  padding-left: 10px;
+    &:hover {
+      color: orange;
+    }
+}
 .img {
   height: 150px;
   width: 250px;
@@ -64,6 +75,11 @@
     font-size: 15pt;
     border: none;
   }
+}
+.search{
+  margin-top: 30px;
+  position: relative;
+  left: 200px;
 }
 #plus {
   display: flex;

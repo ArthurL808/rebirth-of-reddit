@@ -4,20 +4,27 @@ const random = document.getElementById("random");
 const animemes = document.getElementById("animemes");
 const drStone = document.getElementById("drStone");
 const bungoStrayDogs = document.getElementById("bungoStrayDogs");
+const load = document.getElementById("load");
+const searchBar = document.getElementById("searchBar");
+const searchButton = document.getElementById("searchButton");
 const randomArr = [
-  "https://www.reddit.com/r/TokyoGhoul.json",
-  "https://www.reddit.com/r/cowboybebop.json",
-  "https://www.reddit.com/r/dbz.json",
-  "https://www.reddit.com/r/ShokugekiNoSoma.json",
-  "https://www.reddit.com/r/KimetsuNoYaiba.json",
-  "https://www.reddit.com/r/souleater.json",
-  "https://www.reddit.com/r/Trigun.json"
+  "r/TokyoGhoul.json",
+  "r/cowboybebop.json",
+  "r/dbz.json",
+  "r/ShokugekiNoSoma.json",
+  "r/KimetsuNoYaiba.json",
+  "r/souleater.json",
+  "r/Trigun.json"
 ];
-const subReddit = "https://www.reddit.com/r/anime.json";
-
+const subReddit = "r/anime.json";
+let reddit;
+let after;
 function reqListner() {
   postContainer.innerHTML = null;
-  let response = JSON.parse(this.responseText).data.children;
+  let responseText = JSON.parse(this.responseText);
+  let response = responseText.data.children;
+  reddit = `${responseText.data.children[0].data.subreddit_name_prefixed}.json`;
+  after = `&after=${responseText.data.after}`;
   for (let i = 0; i < response.length; i++) {
     let post = document.createElement("div");
     post.className = "post";
@@ -80,23 +87,35 @@ function reqListner() {
   }
 }
 
-function createPost(subReddit) {
+function createPost(subReddit, next) {
   const req = new XMLHttpRequest();
   req.addEventListener("load", reqListner);
-  req.open("GET", subReddit);
+  req.open("GET", `https://www.reddit.com/${subReddit}?limit=50${next}`);
   req.send();
 }
 createPost(subReddit);
 
+searchButton.addEventListener('click',function () {
+  let searchValue = `r/${searchBar.value}.json`
+  createPost(searchValue)
+})
+
+load.addEventListener("click", function() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+  let next = after;
+  createPost(reddit, next);
+});
+
 animemes.addEventListener("click", function() {
-  createPost("https://www.reddit.com/r/Animemes.json");
+  createPost("r/Animemes.json");
 });
 drStone.addEventListener("click", function() {
-  createPost("https://www.reddit.com/r/DrStone.json");
+  createPost("r/DrStone.json");
 });
 
 bungoStrayDogs.addEventListener("click", function() {
-  createPost("https://www.reddit.com/r/BungouStrayDogs.json");
+  createPost("r/BungouStrayDogs.json");
 });
 
 random.addEventListener("click", function() {
