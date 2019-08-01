@@ -4,7 +4,7 @@ const random = document.getElementById("random");
 const animemes = document.getElementById("animemes");
 const drStone = document.getElementById("drStone");
 const bungoStrayDogs = document.getElementById("bungoStrayDogs");
-const load = document.getElementById("load");
+const toTop = document.getElementById("toTop");
 const searchBar = document.getElementById("searchBar");
 const searchButton = document.getElementById("searchButton");
 const randomArr = [
@@ -20,7 +20,6 @@ const subReddit = "r/anime.json";
 let reddit;
 let after;
 function reqListner() {
-  postContainer.innerHTML = null;
   let responseText = JSON.parse(this.responseText);
   let response = responseText.data.children;
   reddit = `${responseText.data.children[0].data.subreddit_name_prefixed}.json`;
@@ -95,29 +94,39 @@ function createPost(subReddit, next) {
 }
 createPost(subReddit);
 
-searchButton.addEventListener('click',function () {
-  let searchValue = `r/${searchBar.value}.json`
-  createPost(searchValue)
-})
+searchButton.addEventListener("click", function() {
+  postContainer.innerHTML = null;
+  let searchValue = `r/${searchBar.value}.json`;
+  createPost(searchValue);
+});
 
-load.addEventListener("click", function() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-  let next = after;
+toTop.addEventListener('click',function () {
+  document.body.scrollTop= 0;
+  document.documentElement.scrollTop= 0;
+})
+window.addEventListener("scroll", function() {
+  if (this.scrollY >= document.body.scrollHeight - 1000) {
+    let next = after;
   createPost(reddit, next);
+  }
+  
 });
 
 animemes.addEventListener("click", function() {
+  postContainer.innerHTML = null;
   createPost("r/Animemes.json");
 });
 drStone.addEventListener("click", function() {
+  postContainer.innerHTML = null;
   createPost("r/DrStone.json");
 });
 
 bungoStrayDogs.addEventListener("click", function() {
+  postContainer.innerHTML = null;
   createPost("r/BungouStrayDogs.json");
 });
 
 random.addEventListener("click", function() {
+  postContainer.innerHTML = null;
   createPost(randomArr[Math.floor(Math.random() * randomArr.length)]);
 });

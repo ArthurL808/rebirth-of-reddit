@@ -3,16 +3,19 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-#load{
+#toTop{
+  position: absolute;
+  right: 0;
+  align-self: center;
   background: none;
   border: none;
-  font-family: 'Oswald';
+  font-family: "Oswald";
   font-size: 15pt;
   color: #818285;
   padding-left: 10px;
-    &:hover {
-      color: orange;
-    }
+  &:hover {
+    color: orange;
+  }
 }
 .img {
   height: 150px;
@@ -30,10 +33,10 @@
 .bySpan {
   color: #818285;
 }
-.dateSpan{
+.dateSpan {
   color: #818285;
 }
-.viewsSpan{
+.viewsSpan {
   color: #818285;
 }
 .authorSpan {
@@ -76,7 +79,7 @@
     border: none;
   }
 }
-.search{
+.search {
   margin-top: 30px;
   position: relative;
   left: 200px;

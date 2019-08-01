@@ -3,14 +3,17 @@
   flex-wrap: wrap;
   justify-content: space-evenly; }
 
-#load {
+#toTop {
+  position: absolute;
+  right: 0;
+  align-self: center;
   background: none;
   border: none;
-  font-family: 'Oswald';
+  font-family: "Oswald";
   font-size: 15pt;
   color: #818285;
   padding-left: 10px; }
-  #load:hover {
+  #toTop:hover {
     color: orange; }
 
 .img {
