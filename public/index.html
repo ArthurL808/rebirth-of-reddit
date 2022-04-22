@@ -16,29 +16,37 @@
     />
   </head>
   <body id="body">
-    <div class="header">
-      <div class="header">
-        <img src="../assets/header_bg.svg" alt="Logo" />
-      </div>
+    <div id="header">
+      <div id="space"></div>
       <div class="search">
         <input id="searchBar" type="text" placeholder="reddit.com/r/..." />
         <button id="searchButton">Search</button>
       </div>
-      <div id="plus">+</div>
+      <div id="header-logo">
+        <img src="./assets/logo.svg" alt="Logo" />
+      </div>
+      <button id="plus">
+        +
+      </button>
     </div>
     <div id="menu">
-      <button id="random">Random</button>&#9679;
-      <button id="animemes">Animemes</button>&#9679;
-      <button id="drStone">Dr. Stone</button>&#9679;
-      <button id="bungoStrayDogs">Bungo Stray Dogs</button>
-    </div>
-    <div id="footer">
-      <img src="../assets/facebook_grey.svg" alt="facebookLogo" />
-      <img src="../assets/instagram_grey.svg" alt="instagramLogo" />
-      <button id="toTop">Top</button>
+
+        <button id="random">Random</button>
+        <span class="dot"></span>
+        <button id="animemes">Animemes</button>
+        <span class="dot"></span>
+        <button id="drStone">Dr. Stone</button>
+        <span class="dot"></span>
+        <button id="bungoStrayDogs">Bungo Stray Dogs</button>
+  
     </div>
     <div id="container"></div>
+    <div id="footer">
+      <div id='facebook'alt="facebookLogo" ></div>
+      <div id="instagram" alt="instagramLogo" ></div>
+      <button id="toTop">Top</button>
+    </div>
   </body>
   <script src="https://momentjs.com/downloads/moment.js"></script>
-  <script src="/app.js"></script>
+  <script src="app.js"></script>
 </html>

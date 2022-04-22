@@ -1,6 +1,6 @@
 const gulp = require("gulp");
 const watch = require("gulp-watch");
-const sass = require("gulp-sass");
+const sass = require("gulp-sass")(require('sass'));
 
 gulp.task("default", function() {
   watch("./sass/**/*.scss", function() {

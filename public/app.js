@@ -28,60 +28,59 @@ function reqListner() {
     let post = document.createElement("div");
     post.className = "post";
     let link = document.createElement("a");
-    link.className = "link";
     link.href = response[i].data.url;
     let postImg = document.createElement("div");
     postImg.className = "postImg";
-    let img = document.createElement("img");
-    img.className = "img";
     if (response[i].data.preview === undefined) {
-      img.src =
-        "https://i.pinimg.com/originals/07/4d/aa/074daa2e08d94a388b0ad82867f965c2.jpg";
+      postImg.style.backgroundImage = "url('https://i.pinimg.com/originals/07/4d/aa/074daa2e08d94a388b0ad82867f965c2.jpg')";
     } else {
-      img.src = response[i].data.preview.images[0].source.url.replace(
+      postImg.style.backgroundImage = `url(${response[i].data.preview.images[0].source.url.replace(
         /amp;/g,
         ""
-      );
+      )})`;
     }
-    let spanHolder = document.createElement("div");
-    spanHolder.className = "spanHolder";
-
-    let postTitle = document.createElement("div");
+    
+    let postTitle = document.createElement("h3");
     postTitle.className = "postTitle";
     postTitle.innerHTML = response[i].data.title;
 
-    let authorSpan = document.createElement("span");
-    authorSpan.className = "authorSpan";
-    authorSpan.innerHTML = `${response[i].data.author} `;
+    let spanContainer = document.createElement("div");
+    spanContainer.className = "spanContainer";
+    
+    let author = document.createElement("p");
+    author.className = "author";
+    author.innerHTML = `By ${response[i].data.author} `;
+    
+    let authorDotSpan = document.createElement("span");
+    authorDotSpan.className = "dot";
 
-    let bySpan = document.createElement("span");
-    bySpan.className = "bySpan";
-    bySpan.innerHTML = "By: ";
-
-    let dateSpan = document.createElement("span");
-    dateSpan.className = "dateSpan";
-    dateSpan.innerHTML = `${moment
+    let date = document.createElement("p");
+    date.className = "date";
+    date.innerHTML = `${moment
       .unix(response[i].data.created, "YYYYMMDD")
       .fromNow()} `;
 
-    let viewsSpan = document.createElement("span");
-    viewsSpan.className = "viewsSpan";
-    viewsSpan.innerHTML = `Views: ${response[i].data.score}`;
+      let dateDotSpan = document.createElement("span");
+    dateDotSpan.className = "dot";
 
-    let postText = document.createElement("div");
+    let views = document.createElement("p");
+    views.className = "views";
+    views.innerHTML = `${response[i].data.score} Views`;
+
+    let postText = document.createElement("p");
     postText.className = "postText";
     postText.innerHTML = response[i].data.selftext;
 
     postContainer.appendChild(link);
     link.appendChild(post);
-    postImg.appendChild(img);
     post.appendChild(postImg);
     post.appendChild(postTitle);
-    post.appendChild(spanHolder);
-    spanHolder.appendChild(bySpan);
-    spanHolder.appendChild(authorSpan);
-    spanHolder.appendChild(dateSpan);
-    spanHolder.appendChild(viewsSpan);
+    post.appendChild(spanContainer);
+    spanContainer.appendChild(author);
+    spanContainer.appendChild(date);
+    spanContainer.appendChild(views);
+    author.appendChild(authorDotSpan);
+    date.appendChild(dateDotSpan);
     post.appendChild(postText);
   }
 }

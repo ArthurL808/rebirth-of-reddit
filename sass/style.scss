@@ -1,7 +1,141 @@
+//MOBILE VIEW START//
+//BODY START
+html,body{
+  font-size: 14px;
+  margin:0;
+}
+body{
+  display:flex;
+  flex-direction:column;
+  background-image: url(../assets/bg.jpg);
+  background-size: cover;
+  
+}
 #container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-direction:column;
+  align-items:center;
+  justify-content: space-around;
+}
+//BODY END
+// HEADER START
+#space{
+  display:none;
+}
+#header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+}
+#header-logo{
+  display:flex;
+  align-items: center;
+  width: 75%;
+}
+#plus {
+  width: 32px;
+  height: 32px;
+  padding:0;
+  aspect-ratio: 1/1;
+  font-size: 2rem;
+  border: solid #f48153 1px;
+  color: #b74326;
+  &:hover {
+    color: white;
+    background-color: #f1582b;
+  }
+}
+// HEADER END
+//NAV START
+#menu {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  background-color: #3a3a3d;
+  color: #818285;
+  span{
+    display:none;
+  }
+  button {
+    white-space: nowrap;
+    height: 2.5rem;
+    border-right: 1px solid #818285;
+    padding: 0 2%;
+    margin: 0 .25rem;
+    &:hover {
+      color: orange;
+    }
+    font-family: "Oswald", sans-serif;
+    color: #818285;
+    background: none;
+    border-left: none;
+    border-top:none;
+    border-bottom: none;
+  }
+  #bungoStrayDogs{
+    border-right: none;
+  }
+}
+//NAV END
+//CARDS START
+a{
+  width: 100%;
+  text-decoration: none;
+  color: black;
+}
+  .post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:.5rem;
+    margin: .4rem .6rem;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgb(41, 16, 0);
+    h3{
+      font-family: "Oswald";
+      margin: .5rem 0;
+      -webkit-box-orient: vertical;
+    }
+  }
+  .postImg{
+  width:100%;
+  height: 350px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.spanContainer {
+  font-family: "Lato";
+  font-size: .85rem;
+  padding-top: 5px;
+  color: #818285;
+  p{
+    margin:0;
+    display:flex;
+    align-items: center;
+  }
+}
+.postText {
+  display: -webkit-box;
+-webkit-line-clamp: 4;
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis;
+  font-family: "Lato";
+  width: 100%;
+}
+.postTitle,.spanContainer {
+  display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: horizontal;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+//CARDS END
+//MISC START
+.search {
+  display: none;
 }
 #toTop{
   position: absolute;
@@ -17,114 +151,133 @@
     color: orange;
   }
 }
-.img {
-  height: 150px;
-  width: 250px;
-  padding-bottom: 5px;
-}
-.spanHolder {
-  font-family: "Lato";
-  padding-top: 5px;
-}
-.link {
-  text-decoration: none;
-  color: black;
-}
-.bySpan {
-  color: #818285;
-}
-.dateSpan {
-  color: #818285;
-}
-.viewsSpan {
-  color: #818285;
-}
-.authorSpan {
-  color: #818285;
-}
-.postText {
-  font-family: "Lato";
-  height: 60px;
-  overflow: hidden;
-}
-.postTitle {
-  font-family: "Oswald";
-  height: 48px;
-  overflow: hidden;
-}
-.post {
-  background-color: white;
-  height: 300px;
-  width: 250px;
-  padding: 20px;
-  margin: 20px;
-  box-shadow: 0px 0px 10px rgb(41, 16, 0);
-  overflow: hidden;
-}
-#menu {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: #3a3a3d;
-  color: #818285;
-  button {
-    &:hover {
-      color: orange;
-    }
-    font-family: "Oswald", sans-serif;
-    color: #818285;
-    background: none;
-    font-size: 15pt;
-    border: none;
-  }
-}
-.search {
-  margin-top: 30px;
-  position: relative;
-  left: 200px;
-}
-#plus {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 20px;
-  right: 15px;
-  height: 28px;
-  width: 25px;
-  font-size: 40px;
-  border: solid #f48153 2px;
-  color: #b74326;
-  &:hover {
-    color: white;
-    background-color: #f1582b;
-  }
-}
-
-.header {
-  display: flex;
-  justify-content: center;
-  background-color: white;
-  background-image: url(../assets/logo.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 75px;
-  position: relative;
-}
-body {
-  margin: 0;
-  background-image: url(../assets/bg.jpg);
-}
 #footer {
-  display: flex;
+  display: none;
   justify-content: center;
+  align-items: center;
   background-color: #3a3a3d;
   position: fixed;
-  bottom: 0%;
+  bottom: 0;
   width: 100%;
   height: 50px;
   img {
     padding-left: 10px;
   }
 }
+.dot{
+  display:inline-block;
+  height:5px;
+  width:5px;
+  margin: 0 .5rem;
+  border-radius: 50%;
+  background-color: #818285;
+}
+//MISC END
+//MOBILE VIEW END//
+
+
+//TABLET VIEW START//
+@media (min-width:768px) {
+  //BODY START
+  html,body{
+    font-size:16px;
+  }
+  #container{
+      display:grid;
+      grid-template-columns: repeat(2,minmax(0,1fr)) ;
+      align-items:stretch;
+      margin: 2rem;
+      gap: 1.5rem;
+    }
+  //BODY END
+  //HEADER START
+  #space{
+    display:block;
+    height:32px;
+    width:32px;
+    margin-left: 1rem;
+  }
+  #header{
+    justify-content: space-between;
+    button{
+      display:flex;
+      justify-content:center;
+      align-items: center;
+      margin-right: 1rem;
+    }
+  }
+  #header-logo{
+    width:50%;
+    justify-content:center;
+    background-image: url(../assets/header_bg.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    img{
+      width: 30%;
+    }
+  }
+  //HEADER END
+  //NAV START
+  #menu {
+    button{
+      font-size:1.25rem;
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+    span{
+      display: inline-block;
+    }
+  }
+  //NAV END
+  //CARDS START
+  .post{
+    height: calc(100% - 1.5rem);
+    margin:0;
+  }
+  //CARDS END
+  }
+  //TABLET VIEW END//
+
+  //DESKTOP VIEW START//
+  @media (min-width:1024px){
+    #header-logo{
+      width: 25%;
+    }
+    #container{
+      max-width: 768px;
+      align-self: center;
+    }
+    #toTop {
+      display: block;
+    }
+    #footer {
+      display: flex;
+      div{
+        height: 25px;
+        width: 25px;
+        margin:.5rem;
+      }
+      #instagram{
+        background-image: url(../assets/instagram_grey.svg);
+        &:hover {
+          background-image: url(../assets/instagram_orange.svg)
+        }
+      }
+      #facebook{
+        background-image: url(../assets/facebook_grey.svg)
+      }
+    }
+    .search{
+      display: flex;
+      position: absolute;
+      margin-left: 1rem;
+    }
+    .post:hover{
+      border: 5px solid orange;
+    }
+  }
+  //DESKTOP VIEW END//
+  
+ 
