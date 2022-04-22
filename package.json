@@ -1,0 +1,29 @@
+{
+  "name": "rebirth-of-reddit",
+  "version": "0.0.1",
+  "description": "redditRemake",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArthurL808/rebirth-of-reddit.git"
+  },
+  "keywords": [
+    "reddit"
+  ],
+  "author": "Arthur Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArthurL808/rebirth-of-reddit/issues"
+  },
+  "homepage": "https://github.com/ArthurL808/rebirth-of-reddit#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "gulp-watch": "^5.0.1",
+    "moment": "^2.24.0",
+    "sass": "^1.50.0"
+  }
+}
